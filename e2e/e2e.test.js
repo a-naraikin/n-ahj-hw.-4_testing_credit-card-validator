@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import puppetteer from 'puppeteer';
 import { fork } from 'child_process';
 
@@ -33,7 +37,31 @@ describe('Credit Card Validator form', () => {
     server.kill();
   });
 
-  test('should add do something', async () => {
-    await page.goto(baseUrl);
+  describe('Credit Card Validator form', () => {
+    test('should add .valid class for valid card number', async () => {
+      await page.goto(baseUrl);
+
+      const form = await page.$('[data-id=form-selector]');
+      const input = await form.$('[data-id=input-selector]');
+      await input.type('371449635398431');
+
+      const submit = await form.$('[data-id=click-selector]');
+      submit.click();
+
+      await page.waitForSelector('.valid');
+    });
+
+    test('should add .invalid class for not valid card number', async () => {
+      await page.goto(baseUrl);
+
+      const form = await page.$('[data-id=form-selector]');
+      const input = await form.$('[data-id=input-selector]');
+      await input.type('371449635398430');
+
+      const submit = await form.$('[data-id=click-selector]');
+      submit.click();
+
+      await page.waitForSelector('.invalid');
+    });
   });
 });
