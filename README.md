@@ -1,6 +1,6 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/ek1gsric148n7pj4?svg=true)](https://ci.appveyor.com/project/a-naraikin/n-ahj-hw-4-testing-credit-card-validator)
 
-## [веб-сайт](https://github.com/a-naraikin/n-ahj-hw.-4_testing_credit-card-validator)
+## [веб-сайт](https://a-naraikin.github.io/n-ahj-hw.-4_testing_credit-card-validator)
 
 ## Домашняя работа «Организация тестирования: Credit Card Validator»
 
